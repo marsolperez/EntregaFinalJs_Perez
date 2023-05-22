@@ -1,3 +1,32 @@
+const APIKEY = 'b81385fefdba9b444da4eab9735021d4';
+const tempValor = document.querySelector('.temp');
+const tempDescripcion = document.querySelector('.desc');
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(ubicacion => {
+    let lat = ubicacion.coords.latitude;
+    let lon = ubicacion.coords.longitude;
+    console.log(lat, lon);
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=es&units=metric&appid=${APIKEY}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        let temp = (data.main.temp).toFixed(1);
+        tempValor.textContent = `${temp} °C`;
+        let descripcion = data.weather[0].description;
+        console.log(descripcion);
+        tempDescripcion.textContent = descripcion;
+      });
+  });
+}
+
+
+
+
+
 
 // FORMULARIO
 // Verificar si el usuario ya ha iniciado sesión

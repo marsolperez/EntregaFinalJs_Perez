@@ -1,7 +1,7 @@
 * {
     margin: auto;
     padding: inherit;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Oswald', sans-serif;
 
 }
 
@@ -62,8 +62,8 @@ body {
 
 #logout-button {
     position: absolute;
-    top: 30px;
-    right: 0;
+    top: 80px;
+    right: 40px;
 }
 
 
@@ -90,6 +90,7 @@ h2 {
     margin: 0;
     font-size: 24px;
     text-align: center;
+    color: white;
 }
 
 label {
